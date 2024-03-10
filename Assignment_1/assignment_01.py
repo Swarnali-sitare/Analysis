@@ -112,8 +112,6 @@ def view_analysis(article_id):
         pos_tag_counts[tag] = pos_tag_counts.get(tag, 0) + 1
     url=article[1]
     heading=scrape_article(url)[1]
-    sentiment_polarity = article[5]
-    sentiment_subjectivity = article[6]
     
     return render_template('analysis.html', url=heading, article_text=article[2], 
                            num_sentences=article[3], num_words=article[4], pos_tag_counts=pos_tag_counts)
